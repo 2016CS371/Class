@@ -1,0 +1,71 @@
+﻿@model IEnumerable<ClassManagment.Models.Faculty>
+
+@{
+    ViewBag.Title = "ShowFaculty";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "CreateFaculty")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lecture)
+        </th>
+        <th>
+            Edit
+        </th>
+        <th>
+            Details
+        </th>
+        <th>
+            Delete
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContactNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lecture)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditFaculty", new { id=item.Fid }) 
+        </td>
+        <td>
+            @Html.ActionLink("Details", "FacultyDetails", new { id=item.Fid })
+        </td>
+        <td> 
+            @Html.ActionLink("Delete", "DeleteFaculty", new { id=item.Fid })
+        </td>
+    </tr>
+}
+
+</table>

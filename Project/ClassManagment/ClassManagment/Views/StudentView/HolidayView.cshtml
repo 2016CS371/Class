@@ -1,0 +1,34 @@
+﻿@model IEnumerable<ClassManagment.Models.Holiday>
+
+@{
+    ViewBag.Title = "HolidayView";
+    Layout = "~/Views/Shared/StudentLayout.cshtml";
+}
+
+<h2>HolidayView</h2>
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Holiday1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Holiday1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+         
+    </tr>
+}
+
+</table>

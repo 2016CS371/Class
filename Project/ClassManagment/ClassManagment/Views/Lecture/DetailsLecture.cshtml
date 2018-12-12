@@ -1,0 +1,59 @@
+﻿@model ClassManagment.Models.Lecture
+
+@{
+    ViewBag.Title = "DetailsLecture";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>DetailsLecture</h2>
+
+<div>
+    <h4>Lecture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lect)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lect)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeacherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Days)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Days)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Lid }) |
+    @Html.ActionLink("Back to List", "ShowLecture")
+</p>

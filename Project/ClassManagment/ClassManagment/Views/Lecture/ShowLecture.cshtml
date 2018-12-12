@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ClassManagment.Models.Lecture>
+
+@{
+    ViewBag.Title = "ShowLecture";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "CreateLecture")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Lect)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TeacherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Days)
+        </th>
+        <th>Edit</th>
+        <th>Details</th>
+        <th>Delete</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lect)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TeacherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Days)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditLecture", new { id=item.Lid }) 
+        </td>
+        <td>
+    @Html.ActionLink("Details", "DetailsLecture", new { id = item.Lid })
+</td>
+<td>
+    @Html.ActionLink("Delete", "DeleteLecture", new { id = item.Lid })
+</td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿@model ClassManagment.Models.Faculty
+
+@{
+    ViewBag.Title = "FacultyDetails";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>FacultyDetails</h2>
+
+<div>
+    <h4>Faculty</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lecture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lecture)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditFaculty", new { id = Model.Fid }) |
+    @Html.ActionLink("Back to List", "Faculty")
+</p>
